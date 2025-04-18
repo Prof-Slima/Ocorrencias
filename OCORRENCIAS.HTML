@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>OCORRÊNCIA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      resize: vertical;
+      padding: 10px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .checkbox-group {
+      margin-top: 10px;
+    }
+
+    .checkbox-group label {
+      font-weight: normal;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .assinatura, .encaminhamento {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    .encaminhamento-options {
+      display: flex;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    @media print {
+      button {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>OCORRÊNCIA</h1>
+
+ <label>1) Ocorrências Identificadas:</label>
+<div class="checkbox-group">
+  <label><input type="checkbox" name="ocorrencias" value="Não frequenta a escola regular e pontualmente (atrasos), não realizando os esforços necessários para progredir nas diversas áreas de sua educação"> 
+    Não frequenta a escola regular e pontualmente (atrasos), não realizando os esforços necessários para progredir nas diversas áreas de sua educação
+  </label>
+
+  <label><input type="checkbox" name="ocorrencias" value="Não está preparado para as aulas e não mantém adequadamente livros e demais materiais escolares de uso pessoal"> 
+    Não está preparado para as aulas e não mantém adequadamente livros e demais materiais escolares de uso pessoal
+  </label>
+
+  <label><input type="checkbox" name="ocorrencias" value="Comporta-se de maneira a perturbar o processo educativo, como, por exemplo, fazendo barulho excessivo em classe, sala de leitura e nos corredores da escola"> 
+    Comporta-se de maneira a perturbar o processo educativo, como, por exemplo, fazendo barulho excessivo em classe, sala de leitura e nos corredores da escola
+  </label>
+
+  <label><input type="checkbox" name="ocorrencias" value="Não contribui para a criação e manutenção de um ambiente de aprendizagem colaborativo e seguro, que garanta o direito de todos os alunos de estudar e aprender"> 
+    Não contribui para a criação e manutenção de um ambiente de aprendizagem colaborativo e seguro, que garanta o direito de todos os alunos de estudar e aprender
+  </label>
+
+  <label><input type="checkbox" name="ocorrencias" value="Ausenta-se das aulas, sem prévia justificativa ou autorização dos professores da escola"> 
+    Ausenta-se das aulas, sem prévia justificativa ou autorização dos professores da escola
+  </label>
+
+  <label><input type="checkbox" name="ocorrencias" value="Utiliza-se em salas de aula ou demais locais de aprendizado escolar, equipamentos eletrônicos como celulares ou outros dispositivos de comunicação e entretenimento que perturbem o ambiente escolar ou prejudiquem o aprendizado"> 
+    Utiliza-se em salas de aula ou demais locais de aprendizado escolar, equipamentos eletrônicos como celulares ou outros dispositivos de comunicação e entretenimento que perturbem o ambiente escolar ou prejudiquem o aprendizado
+  </label>
+
+  <label><input type="checkbox" name="ocorrencias" value="Ocupa-se, durante a aula, de qualquer atividade que lhe seja alheia"> 
+    Ocupa-se, durante a aula, de qualquer atividade que lhe seja alheia
+  </label>
+
+  <label><input type="checkbox" name="ocorrencias" value="Desrespeita professores, funcionários, colegas de sala ou utiliza-se de qualquer forma de agressão"> 
+    Desrespeita professores, funcionários, colegas de sala ou utiliza-se de qualquer forma de agressão
+  </label>
+
+  <label><input type="checkbox" name="ocorrencias" value="Outros"> 
+    Outros:
+  </label>
+  <textarea name="outros" rows="2"></textarea>
+</div>
+
+
+    <label>2) Relato do Professor:</label>
+    <textarea name="relato_professor" rows="9"></textarea>
+
+    <div class="assinatura">
+      <label>3) Assinatura do Professor:</label>
+      <textarea name="assinatura_professor" rows="2"></textarea>
+    </div>
+
+    <div class="encaminhamento">
+      <label>4) Encaminhamento:</label>
+      <div class="encaminhamento-options">
+        <label><input type="checkbox" name="encaminhamento" value="diretor"> Diretor</label>
+        <label><input type="checkbox" name="encaminhamento" value="vice-diretor"> Vice-Diretor</label>
+        <label><input type="checkbox" name="encaminhamento" value="pcg"> PCG</label>
+        <label><input type="checkbox" name="encaminhamento" value="pca"> PCA</label>
+      </div>
+    </div>
+
+    <label>5) Relato da Equipe Gestora e Providências Tomadas:</label>
+    <textarea name="relato_equipe" rows="12"></textarea>
+
+    <div class="button-group">
+      <button type="button" onclick="exportarPDF()">Exportar em PDF</button>
+      <button type="submit">Enviar para Planilha</button>
+    </div>
+
+  </form>
+
+  <script>
+    // Função de exportação para PDF
+    function exportarPDF() {
+      window.print();
+    }
+
+    // Aqui você colocará a integração com Google Sheets via Apps Script (ver próximo passo)
+  </script>
+
+</body>
+</html>
